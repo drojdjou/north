@@ -1,0 +1,3 @@
+NOR.News = function($) {
+	
+}

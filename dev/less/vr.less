@@ -1,0 +1,78 @@
+#vr {
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	perspective: 1500px;
+
+	.content {
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -80px 0 0 -200px;
+
+		// transform: rotateY(30deg);
+		transform-style: preserve-3d;
+
+		.bg {
+			position: absolute;
+			content: '';
+			top: -60%;
+			left: -25%;
+			width: 150%;
+			height: 220%;
+			z-index: -1;
+
+			background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
+			background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 60%,rgba(0,0,0,0) 100%);
+			background: radial-gradient(ellipse at center,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 60%,rgba(0,0,0,0) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
+
+		}
+
+		.tt {
+			width: 400px;
+			pointer-events: none;
+		}
+
+		h4 {
+			color: #fff;
+			font-family: @cond;
+			font-weight: 700;
+			text-transform: uppercase;
+			margin-top: -20px;
+			letter-spacing: 0.02em;
+			
+			padding: 8px 0 8px 0;
+			width: 400px;
+			text-align: center;
+
+			span {
+				margin: 0;
+				padding: 0;
+				line-height: 1;
+			}
+
+			.head {
+				font-size: 36px; 
+				transform: translateZ(10px);
+			}
+
+			.sub {
+				margin-top: -4px;
+				font-size: 18px;
+				transform: translateZ(16px);
+			}
+
+			img {
+				display: inline;
+				height: 50px;
+				vertical-align: middle;
+				margin: -3px 4px 0 0px;
+			}
+		}
+
+	}
+
+}

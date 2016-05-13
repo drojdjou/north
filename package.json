@@ -1,0 +1,21 @@
+ {
+
+	"name": "goe",
+	"description": "Gods of Egypt",
+
+	"version": "0.0.1",
+
+	"devDependencies": {
+
+		"less": "*",
+		"less-plugin-autoprefix": "^1.4.0",
+		"livereload": "*",
+		"chokidar": "*",
+		"uglify-js":"*"
+
+	},
+
+	"dependencies": {
+
+	}
+}

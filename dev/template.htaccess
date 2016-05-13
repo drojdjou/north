@@ -1,0 +1,22 @@
+#
+# Remember to run build.sh each time you edit the template.htaccess file
+#
+# DO NOT EDIT .htaccess DIRECTLY
+#
+
+AddType font/opentype .otf
+AddType image/svg+xml .svg
+AddType font/truetype .ttf
+
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteBase %%PATH%%
+
+RewriteRule ^about.*$ .
+RewriteRule ^gallery.*$ .
+RewriteRule ^trailer.*$ .
+RewriteRule ^credits.*$ .
+RewriteRule ^news.*$ .
+RewriteRule ^contact.*$ .
+RewriteRule ^vr.*$ .

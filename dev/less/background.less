@@ -1,0 +1,28 @@
+#background {
+	position: absolute;
+	.fullwindow();
+
+	.bg, .overlay {
+		.fullwindow();
+	}
+	
+	.bg {
+		background-size: cover;
+		background-position: center;
+	}
+
+	.vr {
+		.fullwindow();
+		border: 0;
+	}
+
+	video {
+		.fullwindow();
+	}
+
+	.overlay {
+		background-color: #000;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+}

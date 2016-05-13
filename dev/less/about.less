@@ -1,0 +1,43 @@
+#about {
+
+	.fullwindow();
+
+	.content {
+		.fullwindow();
+		
+		@media(min-width: 768px) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+	}
+
+	article {
+		
+		font-family: @sans;
+		color: #fff;
+		line-height: 1.66;
+		font-size: 15px;
+		color: #fff;
+		padding: 1.4em 2em 1.4em 2em;
+		text-indent: 1em;
+
+		p:first-of-type {
+			font-style: italic;
+			font-size: 1.1em;
+			line-height: 1.75;
+			font-family: @serif;
+		}
+
+		@media(min-width: 640px) {
+			padding: 1.4em 3em 1.4em 3em;
+		}
+
+		@media(min-width: 768px) {
+			width: 700px;
+			font-size: 17px;
+			padding: 0;
+		}
+	}
+}

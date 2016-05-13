@@ -1,0 +1,57 @@
+footer {
+
+	position: absolute;
+	right: 0;
+	bottom: 0;
+
+	ul {
+		overflow: auto;
+		margin: 0 0px 0px 0;
+		padding: 10px 2px 5px 4px;
+	}
+
+	.overlay-mask {
+		background-color: #000;
+	}
+
+	li {
+		float: left;
+	}
+
+	svg {
+		width: 18px;
+		height: auto;
+		margin: 0 8px 0 8px;
+		cursor: pointer;
+
+		path {
+			fill: rgba(255, 255, 255, 0.9);
+		}
+
+		&:hover {
+			path {
+				fill: @hover;
+			}
+		}
+	}
+
+	#mute.muted {
+		.waves {
+			visibility: hidden;
+		}
+	}
+
+	@media(min-width: 768px) {
+
+		ul {
+			overflow: auto;
+			margin: 0 28px 28px 0;
+			background-color: transparent;
+			padding: 0;
+		}	
+
+		svg {
+			margin: 0 16px 0 16px;
+		}
+	}
+}

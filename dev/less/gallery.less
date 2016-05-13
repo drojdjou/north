@@ -1,0 +1,46 @@
+#gallery {
+
+	.fullwindow();
+
+	.photo {
+		.fullwindow();
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.next, .prev {
+		position: absolute;
+		top: 50%;
+		margin: 0 6px 0 6px;
+		cursor: pointer;
+		transition: transform 0.2s ease;
+
+		path {
+			fill: #fff;
+		}
+
+		&:hover {
+
+			transform: scaleX(1.2) scaleY(1.2);
+
+			path {
+				fill: @hover;
+			}
+		}
+	}
+
+	.next {
+		right: 0%;
+	}
+
+	@media(min-width: 768px) {
+		.photo {
+			background-size: cover;
+		}
+		
+		.next, .prev {
+			margin: 0 32px 0 32px;
+		}
+	}
+}

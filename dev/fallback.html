@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>XXX Fallback</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1, minimal-ui">
+
+<link rel="icon" href="assets/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+
+<link rel="stylesheet" type='text/css' href="css/master.css">
+
+<noscript><meta name="refresh" content="0;URL=fallback.html"></noscript>
+
+<!--[if lte IE 9]>
+	<script type="text/javascript">
+		document.location.href = 'fallback.html';
+	</script>
+<![endif]-->
+
+</head>
+<body>
+
+<h1>This is not the browser we are looking for.</h1>
+
+<!-- !DEV -->
+<script type="text/javascript">
+
+	// LiveReload
+	if(location.host.indexOf('local') > -1 || 
+	   location.host.indexOf('192.168') > -1 || 
+	   location.host.indexOf('10.0') > -1) {
+			var LR_PORT = 35732;
+			document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':' + LR_PORT + '/livereload.js?snipver=1"></' + 'script>');
+	}
+
+</script>
+<!-- !DEV -->
+
+</body>
+</html>
