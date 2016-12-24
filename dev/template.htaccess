@@ -20,3 +20,4 @@ RewriteRule ^credits.*$ .
 RewriteRule ^news.*$ .
 RewriteRule ^contact.*$ .
 RewriteRule ^vr.*$ .
+RewriteRule ^gallery-vr.*$ .

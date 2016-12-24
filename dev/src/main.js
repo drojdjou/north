@@ -14,9 +14,12 @@ NOR.onData = function(data) {
 	NOR.Trailer($);
 	NOR.Credits($);
 	NOR.Gallery($);
+	// Handled by the Background 
+	// NOR.GalleryVR($);
 	NOR.News($);
 	NOR.Contact($);
 	NOR.Nav($);
+	NOR.Footer($);
 
 	VirtualScroll.lockTouch();
 

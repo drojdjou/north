@@ -109,13 +109,14 @@ nav {
 		height: 100%;
 		left: 0;
 		color: #fff;
-		margin-top: -(16 * 3 * 3 + 32px);
+		margin-top: -(16 * 3 * 4 + 32px);
+		margin-left: 64px;
 		pointer-events: none;
 
 		li {
+			
 			position: relative;
-			padding: 16px 32px 16px 64px;
-			margin: 0 0 2px 0;
+			margin: 16px 32px 16px 0;
 			color: #000;
 
 			font-family: @sans;
@@ -128,36 +129,44 @@ nav {
 
 			transition: color 0.1s ease;
 
-			&:after {
+			span {
+				position: relative;
+				// border: 1px solid red;
+			}
+
+			&.current span:after {
 				content: '';
 				position: absolute;
+				display: block;
 				width: 100%;
-				height: 3px;
-				bottom: 0px;
+				height: 2px;
+				top: 20px;
 				left: 0;
 				background-color: #000;
-				transform: scaleX(0.0);
-				transform-origin: 0 0;
-
-				transition: transform 0.2s ease;
+				margin: 0;
+				transition: color 0.1s ease;
 			} 
 		}
 
 		li:hover {
 			color: @hover;
 
-			&:after {
-				// transform: scaleX(1.0);
+			&.current span:after {
+				background-color: @hover;
 			}
 		}
 
 		@media(min-width: 768px) {
 
-			margin-top: -(16 * 3 * 3 + 32px);
+			margin-top: -(16 * 3 * 4 + 32px);
+			margin-left: 128px;
 
 			li {
 				font-size: 16px;
-				padding: 16px 32px 16px 128px;
+				margin: 16px 32px 32px 0;
+
+				&.current:after {
+				}
 			}
 		}
 	}

@@ -1,18 +1,20 @@
 
 <?php 
 
-	$url = "http://" . $_SERVER[HTTP_HOST] . $_SERVER[REQUEST_URI];
-	$path = $_SERVER[REQUEST_URI];
+	$url = "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+	$path = $_SERVER["REQUEST_URI"];
 
 	if(strpos($path, "vr") !== false) {
-		$title = "NORTH VR";
-		$desc = "NORTH - A VR Experience";
-		$shareImage = "http://northvrfilm.com/assets/share/northvr.jpg";
+		$title = "NORTH";
+		$desc = "VR Experience by Matt Ogens & Bartek Drozdz";
+		$shareImage = "http://gonorthordie.com/assets/share/northvr.jpg";
+		$url = "http://gonorthordie.com/vr";
 	} else {
 		$title = "NORTH";
-		$desc = "NORTH - A film by Matt Ogens";
+		$desc = "A film by Matt Ogens";
 		$n = (rand(0,1) == 1) ? "01" : "02";
-		$shareImage = "http://northvrfilm.com/assets/share/north$n.jpg";
+		$shareImage = "http://gonorthordie.com/assets/share/north$n.jpg";
+		$url = "http://gonorthordie.com/";
 	}
 
 ?>
@@ -37,6 +39,12 @@
 <link rel="icon" href="assets/favicon.png?v=2" type="image/x-icon">
 <link rel="shortcut icon" href="assets/favicon.png?v=2" type="image/x-icon">
 
+<meta name="theme-color" content="#000000">
+<link rel="icon" sizes="256x256" href="assets/share/north-256.jpg">
+<link rel="icon" sizes="128x128" href="assets/share/north-128.jpg">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" sizes="128x128" href="assets/share/north-128.jpg">
+
 <script src="https://use.typekit.net/gbi7kwk.js"></script>
 <script>try{Typekit.load({ async: false });}catch(e){}</script>
 
@@ -57,13 +65,13 @@
 <meta property='og:title' content='<?=$title;?>'/>
 <meta property="og:site_name" content='north'/>
 <meta property="og:type" content="website" />
-<meta property="og:url" content='http://northvrfilm.com'/>
+<meta property="og:url" content='<?=$url;?>'/>
 <meta property="og:description" content='<?=$desc;?>'/>
 <meta property="og:image" content='<?=$shareImage;?>'/>
 
 <meta name="twitter:card" content='summary_large_image'>
-<!-- <meta name="twitter:creator" content='@bartekd'> -->
-<meta name="twitter:url" content='http://northvrfilm.com/vr'>
+<meta name="twitter:creator" content='@bartekd'>
+<meta name="twitter:url" content='<?=$url;?>'>
 <meta name="twitter:title" content='<?=$title;?>'>
 <meta name="twitter:description" content='<?=$desc;?>'>
 <meta name="twitter:image" content='<?=$shareImage;?>'>
@@ -90,12 +98,17 @@
 </section>
 
 <section id="vr">
+	
+	<div class="bg"></div>
+
 	<div class="content">
-		<div class="bg"></div>
 		<img class='tt' src='assets/tt-white.png'>
 		<h4>
-			<div class='head'><img src="assets/vr.svg"> VR Experience</div>
-			<div class='sub'>Coming soon</div>
+			<div class='head'><img src="assets/vr.svg"> VR experience</div>
+			<div class='sub'><span class="htw-btn">How to watch?</span></span><a href="/gallery-vr">VR Gallery</a></div>
+			<div class='htw'>
+				North VR is going to be available on<br>Cardboard VR, Gear VR and Oculus soon.<br>We'll keep you updated.
+			</div>
 		</h4>
 	</div>
 </section>
@@ -108,6 +121,12 @@
 
 <section id="trailer">
 	<iframe allowfullscreen="true"></iframe>
+</section>
+
+<section id="news">
+	<div class="content">
+		<ul></ul>
+	</div>
 </section>
 
 <section id="credits">
@@ -137,7 +156,12 @@
 <section id="contact">
 	<article>
 		<h3>For all questions & inquires please contact</h3>
-		<h2><a href="mailto:ogensm@gmail.com">Matt Ogens</a></h2>
+			<a class="me" href="">Matt Ogens</a>
+			<a class="sm" href="http://mattogens.com" target="_blank">mattogens.com</a>
+			<a class="sm" href="https://twitter.com/mattogens" target="_blank">@mattogens</a>
+			<a class="be" href="">Bartek Drozdz</a>
+			<a class="sm" href="http://bartekdrozdz.com" target="_blank">bartekdrozdz.com</a>
+			<a class="sm" href="https://twitter.com/bartekd" target="_blank">@bartekd</a>
 	</article>
 </section>
 
@@ -158,11 +182,11 @@
 
 <footer>
 	<ul>
-		<li><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+		<li class="fb"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 			<path fill="#fff" d="M26.667 0h-21.334c-2.945 0-5.333 2.388-5.333 5.334v21.332c0 2.946 2.387 5.334 5.333 5.334h10.667v-14h-4v-4h4v-3c0-2.761 2.239-5 5-5h5v4h-5c-0.552 0-1 0.448-1 1v3h5.5l-1 4h-4.5v14h6.667c2.945 0 5.333-2.388 5.333-5.334v-21.332c0-2.946-2.387-5.334-5.333-5.334z"></path>
 		</svg></li>
 
-		<li><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+		<li class="tw"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 			<path fill="#fff" d="M32 6.076c-1.177 0.522-2.443 0.875-3.771 1.034 1.355-0.813 2.396-2.099 2.887-3.632-1.269 0.752-2.674 1.299-4.169 1.593-1.198-1.276-2.904-2.073-4.792-2.073-3.626 0-6.565 2.939-6.565 6.565 0 0.515 0.058 1.016 0.17 1.496-5.456-0.274-10.294-2.888-13.532-6.86-0.565 0.97-0.889 2.097-0.889 3.301 0 2.278 1.159 4.287 2.921 5.465-1.076-0.034-2.088-0.329-2.974-0.821-0.001 0.027-0.001 0.055-0.001 0.083 0 3.181 2.263 5.834 5.266 6.437-0.551 0.15-1.131 0.23-1.73 0.23-0.423 0-0.834-0.041-1.235-0.118 0.835 2.608 3.26 4.506 6.133 4.559-2.247 1.761-5.078 2.81-8.154 2.81-0.53 0-1.052-0.031-1.566-0.092 2.905 1.863 6.356 2.95 10.064 2.95 12.076 0 18.679-10.004 18.679-18.68 0-0.285-0.006-0.568-0.019-0.849 1.283-0.926 2.396-2.082 3.276-3.398z"></path>
 		</svg></li>
 
@@ -182,7 +206,7 @@
 <!-- !DEV -->
 
 <!-- !PROD --><!--
-<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="app.min.js"></script>
 --><!-- !PROD -->
 
 <script type="text/javascript" src="data/data.js"></script>

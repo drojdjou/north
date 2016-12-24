@@ -18,7 +18,8 @@ NOR.Nav = function($) {
 		var li = EXT.create("li");
 
 		li.ext.transform({ x: -360 });
-		li.innerHTML = n.label;
+		li.innerHTML = "<span>" + n.label + "</span>";
+		li.path = n.path;
 		if(n.type) li.classList.add(n.type);
 
 		li.ext.on('click', function() {
@@ -28,6 +29,20 @@ NOR.Nav = function($) {
 
 		menu.appendChild(li);
 		lis.push(li);
+	});
+
+	Application.route.on(function(c, l) {
+		lis.forEach(function(li, i) {
+			if(c && c.parts && li.path == c.parts[0]) {
+				li.classList.add('current');
+			} else {
+				li.classList.remove('current');
+			}
+		});
+
+		if(c.parts[0] == ".") {
+			lis[0].classList.add('current');
+		}
 	});
 
 	$.menuOpen.on(function(c, l) {
@@ -46,8 +61,8 @@ NOR.Nav = function($) {
 		var x = c ? 0 : -360;
 		var d = c ? 40 : 5;
 
-		lis.forEach(function(l, i) {
-			l.ext.transition({ transform: { x: x } }, t, Util.cssEase.quadEaseOut, 50 + d * i);
+		lis.forEach(function(li, i) {
+			li.ext.transition({ transform: { x: x } }, t, Util.cssEase.quadEaseOut, 50 + d * i);
 		});
 	});
 

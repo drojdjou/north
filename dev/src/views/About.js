@@ -3,6 +3,8 @@ NOR.About = function($) {
 	var container = EXT.select('#about');
 
 	var article = container.ext.select('article');
+
+	var scroll = NOR.ScrollPane(article, { contentPadding: 0 });
 	
 
 	NOR.Animation.moveForMenu($, container);
@@ -30,9 +32,12 @@ NOR.About = function($) {
 				);
 			});
 
+			scroll.on();
+
 		} else {
 			container.ext.hide();
 			article.innerHTML = '';
+			scroll.off();
 		}
 	});
 }

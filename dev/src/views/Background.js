@@ -24,35 +24,47 @@ NOR.Background = function($) {
 
 		var o = 0;
 
+		if((c.parts[0] == NOR.NAV_VR || c.parts[0] == NOR.NAV_GALLERY_VR) && !isVR) {
+			isVR = true;
+		} else if((c.parts[0] != NOR.NAV_VR && c.parts[0] != NOR.NAV_GALLERY_VR) && isVR)  {
+			isVR = false;
+		}
+
 		if(c.lastPart == NOR.NAV_ABOUT || 
 		   c.lastPart == NOR.NAV_CREDITS ||
-		   c.lastPart == NOR.NAV_NEWS
+		   c.lastPart == NOR.NAV_NEWS ||
+		   c.lastPart == NOR.NAV_CONTACT ||
+		   isVR
 		) {
-			o = 0.5;
+			o = 0.7;
 		} else if(c.lastPart == NOR.NAV_GALLERY || 
-			      c.lastPart == NOR.NAV_TRAILER
+			      c.lastPart == NOR.NAV_TRAILER || 
+			      c.lastPart == NOR.NAV_HOME
 		) {
 			o = 1;
 		}
 
-		if(c.parts[0] == NOR.NAV_VR && !isVR) {
-			isVR = true;
-		} else if(c.parts[0] != NOR.NAV_VR && isVR)  {
-			isVR = false;
-		}
-
 		if(isVR) {
 
-			bg.ext.hide();
 			overlay.ext.hide();
+
+			bg.ext.hide();
 			video.ext.hide();
 			video.pause();
 			isVideo = false;
 
 			iframe.ext.show();
-			iframe.src = $.data.home.vr;
+
+			if(c.parts[0] == NOR.NAV_VR) {
+				iframe.src = $.data.home.vr;
+			} else if(c.parts[0] == NOR.NAV_GALLERY_VR) {
+				iframe.src = $.data.home.vrGallery;
+			}
 
 		} else {
+
+			overlay.ext.show();
+			overlay.style.opacity = o;
 
 
 			iframe.ext.hide();
@@ -77,8 +89,7 @@ NOR.Background = function($) {
 				});
 			}
 
-			overlay.ext.show();
-			overlay.style.opacity = o;
+			
 
 		}
 	});

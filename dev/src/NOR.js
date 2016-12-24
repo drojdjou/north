@@ -8,6 +8,7 @@ NOR = {
 	NAV_NEWS: "news",
 	NAV_CONTACT: "contact",
 
-	NAV_VR: "vr"
+	NAV_VR: "vr",
+	NAV_GALLERY_VR: "gallery-vr"
 
 };

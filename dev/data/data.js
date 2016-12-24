@@ -14,10 +14,12 @@ NOR.onData({
 
 		{ label: "Home", type: "header", path: "." },
 		{ label: "About the film", type: "header", path: "about" },
-		{ label: "VR Experience", type: "header", path: "vr/" },
-		// { label: "Watch Trailer", path: "trailer" },
 		{ label: "Gallery", path: "gallery" },
+		{ label: "VR Experience", type: "header", path: "vr" },
+		{ label: "VR Gallery", path: "gallery-vr" },
+		// { label: "Watch Trailer", path: "trailer" },
 		{ label: "Cast & credits", path: "credits" },
+		{ label: "News", path: "news" },
 		{ label: "Contact", path: "contact" }
 
 	],
@@ -32,7 +34,12 @@ NOR.onData({
 		],
 
 		video: "assets/aerial-720-q24-cc.mp4",
-		vr: 'https://kuula.co/share/7fWCl/ac'
+
+		vr: 'https://kuula.co/share/7fWCl?chromeless=1&autoplay=1&logo=tr&logomargin=20',
+		vrGallery: 'https://kuula.co/share/7fWy3:7fWyR:7fWyW:7fWyy:7fWyz:7fWyQ:7fWyS:7fWyB?chromeless=1&autoplay=1&logo=tr&logomargin=20',
+
+		// vr: 'http://localhost/projects/kuula/dev/share/7fWCl?chromeless=1&autoplay=1&logo=tr&logomargin=20',
+		// vrGallery: 'http://localhost/projects/kuula/dev/share/7fWy3:7fWyR:7fWyW:7fWyy:7fWyz:7fWyQ:7fWyS:7fWyB?chromeless=1&autoplay=1&logo=tr&logomargin=20'
 	},
 	
 	about: {
@@ -58,7 +65,7 @@ NOR.onData({
 			title: "'Leatherface' Actor Joins Post-Apocalyptic Thriller 'North'",
 			source: "The Hollywood Reporter",
 			link: "http://www.hollywoodreporter.com/heat-vision/leatherface-actor-joins-post-apocalyptic-816716",
-			image: "",
+			image: "assets/news/jamesbloor.jpg",
 			content: "",
 			date: "8/18/2015"
 		}

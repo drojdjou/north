@@ -8,6 +8,10 @@ NOR.VR = function($) {
 	var head = container.ext.select('.head');
 	var sub = container.ext.select('.sub');
 
+	var htwBtn = container.ext.select('.htw-btn');
+	var htw = container.ext.select('.htw');
+	var htwVisible = false;
+
 	var fadeInDelay = NOR.Animation.MENU_SLIDE_TIME;
 	if(!Simplrz.touch ) fadeInDelay += 1000;
 
@@ -23,6 +27,18 @@ NOR.VR = function($) {
 		mx += (tx - mx) * 0.1;
  		content.ext.transform({ rotY: mx * 40 });
 	}
+
+	htwBtn.ext.on('click', function() {
+		if(!htwVisible) {
+			htw.ext.show();
+			htw.style.opacity = 0;
+			htw.ext.transition({ opacity: 1 }, 1000, "ease");
+			htwVisible = true;
+		} else {
+			htw.ext.hide();
+			htwVisible = false;
+		}
+	});
 
 	NOR.Animation.moveForMenu($, container);
 
@@ -64,8 +80,11 @@ NOR.VR = function($) {
 				}
 			);
 
+			htw.ext.hide();
+
 		} else {
 			container.ext.hide();
+			htwVisible = false;
 			// document.removeEventListener('mousemove', trackMouse);
 			// FrameImpulse.off(moveTitle);
 		}
