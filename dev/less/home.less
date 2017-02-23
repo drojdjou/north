@@ -27,6 +27,27 @@
 			}
 		}
 
+		h5 {
+			text-align: center;
+			width: 100%;
+			color: @color;
+			font-family: @sans;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 12px;
+			margin: 16px 0 0 -4px;
+
+			a {
+				text-decoration: none;
+			}
+		}
+
+		.vod {
+			img {
+				width: 130px;
+			}
+		}
+
 		.tt {
 			position: relative;
 			width: 60%;
@@ -40,9 +61,41 @@
 			}
 		}
 
+		a {
+			color: @color;
+			font-family: @sans;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 12px;
+
+			position: relative;
+
+			&:after {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 2px;
+				bottom: -6px;
+				left: 0;
+				background-color: #fff;
+				transform: scaleX(0.0);
+
+				transition: transform 0.2s ease;
+			} 
+
+			.no-touch &:hover {
+				color: #fff;
+
+				&:after {
+					transform: scaleX(1.0);
+				}
+			}
+		}
+
 		ul.quick-menu {
 
-			margin-top: 60px;
+			margin-top: 40px;
 			width: 100%;
 			text-align: center;
 
@@ -50,40 +103,10 @@
 				display: inline-block;
 				margin: 0 6px 10px 6px;
 			}
+		}
 
-			a {
-				color: @color;
-				font-family: @sans;
-				text-decoration: none;
-				text-transform: uppercase;
-				font-weight: 700;
-				font-size: 12px;
-
-				position: relative;
-
-				&:after {
-					content: '';
-					position: absolute;
-					width: 100%;
-					height: 2px;
-					bottom: -6px;
-					left: 0;
-					background-color: #fff;
-					transform: scaleX(0.0);
-
-					transition: transform 0.2s ease;
-				} 
-
-				.no-touch &:hover {
-					color: #fff;
-
-					&:after {
-						transform: scaleX(1.0);
-					}
-				}
-			}
-
-			@media(min-width: 768px) {
+		@media(min-width: 768px) {
+			ul.quick-menu {
 				li {
 					margin: 0 10px 0 0;
 				}
@@ -96,10 +119,10 @@
 					position: relative;
 					top: 3px;
 				}
+			}
 
-				a {
-					font-size: 14px;
-				}
+			a {
+				font-size: 14px;
 			}
 		}
 	}

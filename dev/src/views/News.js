@@ -27,7 +27,10 @@ NOR.News = function($) {
 				c += "<p>" + n.content + "</p>";
 			}
 
-			c += "<h5>" + n.source + "</h5>";
+			if(n.source) {
+				c += "<h5>" + n.source + "</h5>";
+			}
+
 			c += "<h6>" + n.date + "</h6>";
 			c += "</a>";
 

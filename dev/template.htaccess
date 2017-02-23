@@ -16,6 +16,7 @@ RewriteBase %%PATH%%
 RewriteRule ^about.*$ .
 RewriteRule ^gallery.*$ .
 RewriteRule ^trailer.*$ .
+RewriteRule ^vrfilm.*$ .
 RewriteRule ^credits.*$ .
 RewriteRule ^news.*$ .
 RewriteRule ^contact.*$ .

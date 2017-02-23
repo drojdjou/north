@@ -17,12 +17,20 @@ NOR.onData({
 		{ label: "Gallery", path: "gallery" },
 		{ label: "VR Experience", type: "header", path: "vr" },
 		{ label: "VR Gallery", path: "gallery-vr" },
-		// { label: "Watch Trailer", path: "trailer" },
+		{ label: "Watch Trailer", path: "trailer" },
 		{ label: "Cast & credits", path: "credits" },
 		{ label: "News", path: "news" },
 		{ label: "Contact", path: "contact" }
 
 	],
+
+	trailer: {
+		url: 'dYqbtDV1MJQ'
+	},
+
+	vrfilm: {
+		url: 'k7v6n2_A_e0'
+	},
 
 	home: {
 
@@ -46,11 +54,14 @@ NOR.onData({
 		feature: "<p>A few years from now, something will happen that will change our world.  A global event that causes pandemonium, chaos, and death.  Life as we know it will never be the same.  Left behind are abandoned buildings, empty streets, and other painful reminders of a better yesterday.  Not a single adult remains, all victims of this global catastrophe.</p><p>The only survivors are teenagers and children, living on the streets in the hollowed out shell of a once great city.  This is their world now.  They make their own rules and enforce their own laws.  Some are merely trying to survive, while others rule by force.</p><p>Our hero is a young boy named Josh <i>(Jacob Lofland - Mud, Little Accidents, Maze Runner 2, The Free State of Jones)</i> who decides to take the biggest risk of all. He flees the dangerous confines of his abandoned city and embarks on a journey with his classmate and neighbor Jessie <i>(Sophie Kennedy Clark - Philomena, Nymphomaniac)</i>, to what they’ve heard is the only safe haven left in the world.  Pursued by The Lettermen, led by Caleb <i>(Patrick Schwarzenegger)</i> and Gentry <i>(James Bloor)</i>, Josh and Jessie trek North.  The place where everyone attempted to migrate years ago when the disaster first struck.  They don’t know how to get there, or if it even exists.  All they know is that it is NORTH.</p>"
 	},
 
-	trailer: {
-		youtubeid: '1YfwEKoDXTc'
-	},
-
 	news: [
+
+		{
+			title: "GO NORTH in Theaters & on VOD January 13th",
+			image: "assets/poster.jpg",
+			content: "NYC | Cinema Village<br>Philadelphia | Roxy<br>Detroit | Cinema Detroit<br>Atlanta | Plaza Theatre<br>Boston | Wellfleet 4<br>Minneapolis / St. Paul | Gopher Theatre<br>Cleveland | Atlas Cinemas Diamond 6<br>Denver | Kress Cinema and Lounge<br>Seattle | Dragonfly Cinema<br>Tampa | Cinema 6<br><br><a href='http://bit.ly/gonorthmovie'><img class='itunes' src='assets/itunes.png'></a>" ,
+			date: "1/1/2017"
+		},
 
 		{
 			title: "First Look at Patrick Schwarzenegger, Jacob Lofland in 'North'",

@@ -1,4 +1,4 @@
-NOR.Trailer = function($) {
+NOR.Video = function($) {
 
 	var container = EXT.select('#trailer');
 
@@ -22,14 +22,7 @@ NOR.Trailer = function($) {
 		return 'http://www.youtube.com/embed/' + id + ytOptions;
 	}
 
-	var startTrailer = function() {
-		var ytURL = getYTurl($.data.trailer.youtubeid);
-		ytFrame.src = ytURL;
-		container.ext.show();
-	}
-
-	var endTrailer = function() {
-		console.log('endTrailer');
+	var closePlayer = function() {
 		ytFrame.src = '';
 		container.ext.hide();
 	}
@@ -39,9 +32,13 @@ NOR.Trailer = function($) {
 	Application.route.on(function(c, l) {
 
 		if(c.lastPart == NOR.NAV_TRAILER) {
-			startTrailer();
-		} else if(l.lastPart == NOR.NAV_TRAILER) {
-			endTrailer();
+			ytFrame.src = getYTurl($.data.trailer.url);
+			container.ext.show();
+		} else if(c.lastPart == NOR.NAV_VRFILM) {
+			ytFrame.src = getYTurl($.data.vrfilm.url);
+			container.ext.show();
+		} else if(l.lastPart == NOR.NAV_TRAILER || l.lastPart == NOR.NAV_VRFILM) {
+			closePlayer();
 		}
 
 	});

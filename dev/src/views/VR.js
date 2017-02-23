@@ -8,9 +8,13 @@ NOR.VR = function($) {
 	var head = container.ext.select('.head');
 	var sub = container.ext.select('.sub');
 
-	var htwBtn = container.ext.select('.htw-btn');
+	var watchBtn = container.ext.select('.watch-btn');
 	var htw = container.ext.select('.htw');
-	var htwVisible = false;
+
+	if(Simplrz.touch) {
+		watchBtn.innerHTML = "Watch in 360&deg;";
+	}
+
 
 	var fadeInDelay = NOR.Animation.MENU_SLIDE_TIME;
 	if(!Simplrz.touch ) fadeInDelay += 1000;
@@ -28,15 +32,15 @@ NOR.VR = function($) {
  		content.ext.transform({ rotY: mx * 40 });
 	}
 
-	htwBtn.ext.on('click', function() {
-		if(!htwVisible) {
-			htw.ext.show();
-			htw.style.opacity = 0;
-			htw.ext.transition({ opacity: 1 }, 1000, "ease");
-			htwVisible = true;
+	var getYTurl = function(id) {
+		return 'https://www.youtube.com/watch?v=' + id;
+	}
+
+	watchBtn.ext.on('click', function() {
+		if(Simplrz.touch) {
+			window.open(getYTurl($.data.vrfilm.url));
 		} else {
-			htw.ext.hide();
-			htwVisible = false;
+			Application.navigate.trigger("vrfilm");
 		}
 	});
 
@@ -80,13 +84,17 @@ NOR.VR = function($) {
 				}
 			);
 
-			htw.ext.hide();
+			htw.style.opacity = 0;
+			htw.ext.transform({ y: 30 });
+			htw.ext.transition(
+				{ opacity: 1, transform: { y: 0 } }, 
+				NOR.Animation.FADE_IN_TIME * 2.2, 
+				Util.cssEase.easeOut, 
+				fadeInDelay + 400
+			);
 
 		} else {
 			container.ext.hide();
-			htwVisible = false;
-			// document.removeEventListener('mousemove', trackMouse);
-			// FrameImpulse.off(moveTitle);
 		}
 	});
 }

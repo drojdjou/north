@@ -11,7 +11,7 @@ NOR.onData = function(data) {
 	NOR.Home($);
 	NOR.About($);
 	NOR.VR($);
-	NOR.Trailer($);
+	NOR.Video($);
 	NOR.Credits($);
 	NOR.Gallery($);
 	// Handled by the Background 

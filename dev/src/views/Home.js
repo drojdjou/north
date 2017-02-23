@@ -5,6 +5,8 @@ NOR.Home = function($) {
 	var logo = container.ext.select('.tt');
 	var director = container.ext.select('h4');
 	var qmenu = container.ext.select('.quick-menu');
+	var release = container.ext.select('h5.rel');
+	var vod = container.ext.select('h5.vod');
 
 	// var vr = container.ext.select('.vr');
 	// vr.ext.bg($.data.home.vr);
@@ -43,6 +45,24 @@ NOR.Home = function($) {
 				NOR.Animation.FADE_IN_TIME * 2.4, 
 				Util.cssEase.easeOut, 
 				fadeInDelay + 200
+			);
+
+			release.style.opacity = 0;
+			release.ext.transform({ y:  40 });
+			release.ext.transition(
+				{ opacity: 1, transform: { y: 0 } }, 
+				NOR.Animation.FADE_IN_TIME * 2.6, 
+				Util.cssEase.easeOut, 
+				fadeInDelay + 300
+			);
+
+			vod.style.opacity = 0;
+			vod.ext.transform({ y:  50 });
+			vod.ext.transition(
+				{ opacity: 1, transform: { y: 0 } }, 
+				NOR.Animation.FADE_IN_TIME * 2.6, 
+				Util.cssEase.easeOut, 
+				fadeInDelay + 400
 			);
 
 		} else {

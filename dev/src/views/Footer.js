@@ -1,5 +1,6 @@
 NOR.Footer = function($) {
 
+	var ft = EXT.select("footer");
 	var fb = EXT.select("footer .fb");
 	var tw = EXT.select("footer .tw");
 
@@ -33,4 +34,13 @@ NOR.Footer = function($) {
 		openPopup(u, 640, 260);
 	});
 
+	Application.route.on(function(c, l) {
+
+		if(c.lastPart == NOR.NAV_TRAILER) {
+			ft.ext.hide();
+		} else if(l.lastPart == NOR.NAV_TRAILER) {
+			ft.ext.show();
+		}
+
+	});
 }

@@ -91,9 +91,12 @@
 		<img class='tt' src='assets/tt-white.png'>
 		<h4>A film by Matt Ogens</h4>
 		<ul class='quick-menu'>
-			<li><a href='/about'>The feature film</a></li>
+			<li><a href='/about'>About</a></li>
+			<li><a href='/trailer'>Trailer</a></li>
 			<li><a href='/vr'>VR Experience</a></li>
 		</ul>
+		<h5 class="rel"><a href='/news'>In Theaters January 13th</a></h5>
+		<h5 class="vod"><a href='http://bit.ly/gonorthmovie' target="_blank"><img src='assets/itunes.png'></a></h5>
 	</div>
 </section>
 
@@ -105,9 +108,15 @@
 		<img class='tt' src='assets/tt-white.png'>
 		<h4>
 			<div class='head'><img src="assets/vr.svg"> VR experience</div>
-			<div class='sub'><span class="htw-btn">How to watch?</span></span><a href="/gallery-vr">VR Gallery</a></div>
+			<div class='sub'>
+				<span class="watch-btn">Watch in 360&deg;</span>
+				<a href="/gallery-vr">VR Gallery</a>
+			</div>
 			<div class='htw'>
-				North VR is going to be available on<br>Cardboard VR, Gear VR and Oculus soon.<br>We'll keep you updated.
+				Watch Go North n VR on the RYOT mobile app.<br>Download it for 
+				<a href="https://play.google.com/store/apps/details?id=com.apto.ryot_vr" target="_blank">Android</a> 
+				or 
+				<a href="https://itunes.apple.com/us/app/ryot-vr/id1046058227" target="_blank">iOS</a>.
 			</div>
 		</h4>
 	</div>

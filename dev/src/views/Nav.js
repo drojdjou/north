@@ -43,6 +43,12 @@ NOR.Nav = function($) {
 		if(c.parts[0] == ".") {
 			lis[0].classList.add('current');
 		}
+
+		if(c.lastPart == NOR.NAV_VRFILM) { 
+			icon.ext.transform({ x: 45 });
+		} else {
+			icon.ext.transform({ x: 0 });
+		}
 	});
 
 	$.menuOpen.on(function(c, l) {
