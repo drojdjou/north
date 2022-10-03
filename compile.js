@@ -16,22 +16,7 @@ NOR = {
 require('./dev/data/data.js');
 
 // Check path
-var path = process.argv[2];
-var locpath;
-
-try {
-	locpath = fs.readFileSync('./dev/base.local').toString();
-	console.log(locpath);
-} catch(e) {
-	console.error('Please create the ./dev/base.local file first. Refer to README.md, section: "Starting dev", for details.');
-	process.exit(1);
-}
-
-if(!path) {
-	console.error('Please provide base path. Refer to README.md, section: "Building", for details.');
-	process.exit(1);
-}
-
+var path = process.argv[2] || "/";
 
 /// MINIFY JS
 
@@ -123,50 +108,51 @@ var saveBucket = function(bucket, fileBase, outputUrl) {
 }
 
 
-saveBucket(createBucket(['dev/lib', 'dev/src']), 'app', 'release/');
 
 
 
 /// CREATE RELEASE index.html
 
 var builldHTML = function(devFilePath, releaseFilePath, serverPath) {
-
+	
 	var devFile = fs.readFileSync(devFilePath, { encoding: 'UTF-8' }).split('\n');
 	var devOut = [];
-
+	
 	var mDev = '!DEV';
 	var mProd = '!PROD';
 	var mPath = '%%PATH%%';
 	var devLock = false;
-
+	
 	devFile.forEach(function(line) {
-
+		
 		if(line.indexOf(mDev) > -1) {
 			devLock = !devLock;
 		}
-
+		
 		if(line.indexOf(mProd) > -1) {
 			line = '';
 		}
-
+		
 		if(line.indexOf(mPath) > -1) {
 			line = line.replace(mPath, serverPath);
 		}
-
+		
 		if(line.indexOf('<base') > -1 && !useBasePath) {
 			line = '';
 		}
-
+		
 		if(!devLock && line.indexOf(mDev) == -1) {
 			devOut.push(line);
 		}
 	});
-
+	
 	fs.writeFileSync(releaseFilePath, devOut.join('\n'), { encoding: 'UTF-8' });
-
+	
 }
 
 less.compile('master', 'dev/less/', 'release/css/');
+
+saveBucket(createBucket(['dev/lib', 'dev/src']), 'app', 'release/');
 
 builldHTML('dev/index.php', 'release/index.php', path);
 builldHTML('dev/fallback.html', 'release/fallback.html', path);
