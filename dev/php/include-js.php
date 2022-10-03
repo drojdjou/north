@@ -12,11 +12,9 @@ function getDirContents($dir) {
 			$js = substr($path, $cmdl);
 			echo "<script type=\"text/javascript\" src=\"" . $js . "\"></script>\n";
 		} else if(is_dir($path) && $value != "." && $value != "..") {
-			getDirContents($path, $results);
+			getDirContents($path);
 		}
 	}
-
-	return $results. "\n";
 }
 
 ?>
