@@ -3,6 +3,8 @@
 var fs = require('fs');
 var UglifyJS = require("uglify-js");
 
+var less = require('./build/lecc');
+
 var useBasePath = true;
 
 NOR = {
@@ -164,17 +166,8 @@ var builldHTML = function(devFilePath, releaseFilePath, serverPath) {
 
 }
 
+less.compile('master', 'dev/less/', 'release/css/');
+
 builldHTML('dev/index.php', 'release/index.php', path);
 builldHTML('dev/fallback.html', 'release/fallback.html', path);
 builldHTML('dev/template.htaccess', 'release/.htaccess', path);
-
-builldHTML('dev/template.htaccess', 'dev/.htaccess', locpath);
-
-
-
-
-
-
-
-
-
