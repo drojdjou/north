@@ -1,21 +1,13 @@
- {
-
-	"name": "goe",
-	"description": "Gods of Egypt",
-
-	"version": "0.0.1",
-
+{
+	"name": "nor",
+	"description": "North Film VR",
+	"version": "0.0.2",
 	"devDependencies": {
-
 		"less": "*",
-		"less-plugin-autoprefix": "^1.4.0",
+		"less-plugin-autoprefix": "*",
 		"livereload": "*",
 		"chokidar": "*",
-		"uglify-js":"*"
-
+		"uglify-js": "*"
 	},
-
-	"dependencies": {
-
-	}
+	"dependencies": {}
 }

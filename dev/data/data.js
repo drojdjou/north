@@ -44,7 +44,7 @@ NOR.onData({
 		video: "assets/aerial-720-q24-cc.mp4",
 
 		vr: 'https://kuula.co/share/7fWCl?chromeless=1&autoplay=1&logo=tr&logomargin=20',
-		vrGallery: 'https://kuula.co/share/7fWy3:7fWyR:7fWyW:7fWyy:7fWyz:7fWyQ:7fWyS:7fWyB?chromeless=1&autoplay=1&logo=tr&logomargin=20',
+		vrGallery: 'https://kuula.co/share/collection/7ll5Z?logo=1&info=1&fs=0&vr=0&zoom=1&gyro=0&thumbs=0',
 
 		// vr: 'http://localhost/projects/kuula/dev/share/7fWCl?chromeless=1&autoplay=1&logo=tr&logomargin=20',
 		// vrGallery: 'http://localhost/projects/kuula/dev/share/7fWy3:7fWyR:7fWyW:7fWyy:7fWyz:7fWyQ:7fWyS:7fWyB?chromeless=1&autoplay=1&logo=tr&logomargin=20'

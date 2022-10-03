@@ -76,7 +76,15 @@ NOR.Background = function($) {
 				bg.ext.hide();
 				video.ext.show();
 				video.src = $.data.home.video;
-				video.play();
+
+				video.play().then(() => {}, () => {
+					console.log("Video won't play, we need manual action");
+					var mv = () => {
+						video.play();
+						document.removeEventListener("mousemove", mv);
+					};
+					document.addEventListener("mousemove", mv);
+				});
 			} else {
 				video.ext.hide();
 				video.pause();

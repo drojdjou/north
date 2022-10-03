@@ -45,9 +45,6 @@
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="apple-touch-icon" sizes="128x128" href="assets/share/north-128.jpg">
 
-<script src="https://use.typekit.net/gbi7kwk.js"></script>
-<script>try{Typekit.load({ async: false });}catch(e){}</script>
-
 <link rel="stylesheet" type='text/css' href="css/master.css">
 
 <noscript><meta name="refresh" content="0;URL=fallback.html"></noscript>
@@ -58,9 +55,8 @@
 	</script>
 <![endif]-->
 
-<meta name="robots" content="noindex, nofollow">
-<meta name='description' content=''/>
-<meta name='keywords' content=''/>
+<meta name="robots" content="index,follow">
+<meta name='description' content='NORTH | A film by Matt Ogens'/>
 
 <meta property='og:title' content='<?=$title;?>'/>
 <meta property="og:site_name" content='north'/>
@@ -82,7 +78,7 @@
 <section id="background">
 	<div class="bg"></div>
 	<iframe class="vr"></iframe>
-	<video autoplay loop></video>
+	<video autoplay loop muted></video>
 	<div class="overlay"></div>
 </section>
 
@@ -233,17 +229,6 @@
 
 </script>
 <!-- !DEV -->
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-73351426-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 </body>
 </html>
