@@ -227,7 +227,7 @@
 	if(location.host.indexOf('local') > -1 || 
 	   location.host.indexOf('192.168') > -1 || 
 	   location.host.indexOf('10.0') > -1) {
-			var LR_PORT = 35734;
+			var LR_PORT = 35780;
 			document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':' + LR_PORT + '/livereload.js?snipver=1"></' + 'script>');
 	}
 

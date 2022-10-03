@@ -8,7 +8,7 @@ var less = require('less');
 var fs = require('fs');
 var LessPluginAutoPrefix = require('less-plugin-autoprefix');
 
-var LRPORT = 35734;
+var LRPORT = 35780;
 
 var lrserver = livereload.createServer({ port: LRPORT });
 lrserver.watch(__dirname + "/dev");
