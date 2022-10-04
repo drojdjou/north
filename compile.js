@@ -1,117 +1,12 @@
 #!/usr/bin/env node
 
 var fs = require('fs');
-var UglifyJS = require("uglify-js");
-
+var jcc = require('./build/jcc');
 var less = require('./build/lecc');
 
 var useBasePath = true;
 
-NOR = {
-	onData: function(data) {
-		useBasePath = data.config.deeplinks;
-	}
-}
-
-require('./dev/data/data.js');
-
-// Check path
 var path = process.argv[2] || "/";
-
-/// MINIFY JS
-
-var walk = function(dir, filelist) {
-
-	var files = fs.readdirSync(dir);
-	var filelist = filelist || [];
-
-	files.forEach(function(file) {
-		if (fs.statSync(dir + file).isDirectory()) {
-			filelist = walk(dir + file + '/', filelist);
-		} else {
-			if(file.indexOf('.') != 0) filelist.push(dir + file);
-		}
-	});
-
-	return filelist;
-};
-
-var minify = function(set) {
-
-	var includes = [];
-
-	for(var i = 0; i < set.length; i++) {
-		includes.push(set[i]);
-	}
-
-	var result = "";
-
-	try {
-		result = UglifyJS.minify(includes);
-	} catch(e) {
-		console.log(e);
-	}
-
-	 
-
-	return result.code;
-}
-
-var concat = function(set) {
-
-	var concatFile = "";
-
-	for(var i = 0; i < set.length; i++) {
-		var f =  set[i];
-		concatFile += "/* --- --- [" + f + "] --- --- */\n\n";
-		concatFile += fs.readFileSync(f);
-		concatFile += "\n\n";
-	}
-
-	return concatFile;
-}
-
-var createBucket = function(folder, files) {
-
-	files = files || [];
-	
-	if(folder instanceof Array) {
-		folder.forEach(function(f) {
-			files = files.concat(walk(f + '/'));
-		});
-	} else {
-		files = files.concat(walk(folder + '/'));
-	}
-
-	var result = {};
-	
-	result.concat = concat(files);
-	result.mini = minify(files);
-
-	return result;
-}
-
-
-var saveBucket = function(bucket, fileBase, outputUrl) {
-
-	var cf = outputUrl + fileBase + '.js';
-	fs.writeFileSync(cf, bucket.concat);
-	var cs = fs.statSync(cf).size;
-	var cks = (cs / 1024) | 0;
-	console.log('[ ' + cf + '\t' + cs + ' bytes\t' + cks + ' kb ]');
-
-	var mf = outputUrl + fileBase + '.min.js';
-	fs.writeFileSync(mf, bucket.mini);
-	var ms = fs.statSync(mf).size;
-	var mks = (ms / 1024) | 0;
-	console.log('[ ' + mf + '\t' + ms + ' bytes\t' + mks + ' kb ]');
-}
-
-
-
-
-
-/// CREATE RELEASE index.html
 
 var builldHTML = function(devFilePath, releaseFilePath, serverPath) {
 	
@@ -152,7 +47,7 @@ var builldHTML = function(devFilePath, releaseFilePath, serverPath) {
 
 less.compile('master', 'dev/less/', 'release/css/');
 
-saveBucket(createBucket(['dev/lib', 'dev/src']), 'app', 'release/');
+jcc.saveBucket(jcc.createBucket(["dev/lib", "dev/src"]), 'app', 'release/js/');
 
 builldHTML('dev/index.php', 'release/index.php', path);
 builldHTML('dev/fallback.html', 'release/fallback.html', path);

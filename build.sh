@@ -3,6 +3,7 @@ rm -Rf release/
 mkdir release/
 mkdir release/assets/
 mkdir release/css/
+mkdir release/js/
 mkdir release/data/
 
 node compile.js $1

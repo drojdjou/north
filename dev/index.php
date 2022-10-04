@@ -211,7 +211,7 @@
 <!-- !DEV -->
 
 <!-- !PROD --><!--
-<script type="text/javascript" src="app.min.js"></script>
+<script type="text/javascript" src="js/app.min.js"></script>
 --><!-- !PROD -->
 
 <script type="text/javascript" src="data/data.js"></script>
